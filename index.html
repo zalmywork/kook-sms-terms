@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kook SMS Program — Terms & Opt-In Info</title>
+  <title>Kook SMS Terms of Service</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
@@ -17,226 +17,42 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
     /* Header */
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e5e5e5;
-      padding: 20px 0;
-    }
+    header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 20px 0; }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #1a1a1a; }
+    .logo span { color: #2563eb; }
+    .badge { font-size: 12px; font-weight: 500; color: #6b7280; background: #f3f4f6; padding: 4px 10px; border-radius: 100px; }
 
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+    main { padding: 48px 0 80px; }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #1a1a1a;
-    }
+    h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; color: #111; }
+    .subtitle { font-size: 16px; color: #6b7280; margin-bottom: 8px; }
+    .updated { font-size: 13px; color: #9ca3af; margin-bottom: 40px; }
 
-    .logo span {
-      color: #2563eb;
-    }
+    section { margin-bottom: 32px; }
+    h2 { font-size: 18px; font-weight: 600; margin-bottom: 10px; color: #111; }
+    p { font-size: 15px; color: #374151; margin-bottom: 12px; }
+    code { background: #f3f4f6; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono','Menlo',monospace; font-size: 13px; }
 
-    .badge {
-      font-size: 12px;
-      font-weight: 500;
-      color: #6b7280;
-      background: #f3f4f6;
-      padding: 4px 10px;
-      border-radius: 100px;
-    }
+    .msg-types { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .msg-tag { font-size: 13px; font-weight: 500; color: #374151; background: #f3f4f6; padding: 6px 14px; border-radius: 100px; }
 
-    /* Main */
-    main {
-      padding: 48px 0 80px;
-    }
+    .contact-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 20px 24px; margin-top: 8px; }
+    .contact-card p { margin-bottom: 4px; font-size: 14px; }
+    .contact-card p:last-child { margin-bottom: 0; }
 
-    h1 {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-      color: #111;
-    }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    .subtitle {
-      font-size: 16px;
-      color: #6b7280;
-      margin-bottom: 40px;
-    }
-
-    section {
-      margin-bottom: 36px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: #111;
-    }
-
-    p {
-      font-size: 15px;
-      color: #374151;
-      margin-bottom: 12px;
-    }
-
-    /* How It Works Steps */
-    .steps {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .step {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 10px;
-      padding: 16px 20px;
-    }
-
-    .step-num {
-      flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      background: #2563eb;
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .step-text {
-      font-size: 15px;
-      color: #374151;
-      line-height: 1.6;
-    }
-
-    /* Info Card */
-    .info-card {
-      background: #fff;
-      border: 1px solid #e5e5e5;
-      border-radius: 10px;
-      padding: 24px;
-      margin-top: 8px;
-    }
-
-    .info-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #f3f4f6;
-      font-size: 14px;
-    }
-
-    .info-row:last-child {
-      border-bottom: none;
-    }
-
-    .info-label {
-      color: #6b7280;
-      font-weight: 500;
-    }
-
-    .info-value {
-      color: #1a1a1a;
-      font-weight: 500;
-      text-align: right;
-    }
-
-    .info-value code {
-      background: #f3f4f6;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-family: 'SF Mono', 'Menlo', monospace;
-      font-size: 13px;
-    }
-
-    /* Message Types */
-    .msg-types {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .msg-tag {
-      font-size: 13px;
-      font-weight: 500;
-      color: #374151;
-      background: #f3f4f6;
-      padding: 6px 14px;
-      border-radius: 100px;
-    }
-
-    /* Disclosure Box */
-    .disclosure {
-      background: #f9fafb;
-      border: 1px solid #e5e5e5;
-      border-radius: 10px;
-      padding: 20px 24px;
-      font-size: 14px;
-      color: #6b7280;
-      line-height: 1.8;
-    }
-
-    /* Links */
-    a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .policy-links {
-      display: flex;
-      gap: 24px;
-      margin-top: 16px;
-    }
-
-    .policy-links a {
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid #e5e5e5;
-      padding: 24px 0;
-      text-align: center;
-    }
-
-    footer p {
-      font-size: 13px;
-      color: #9ca3af;
-    }
+    footer { border-top: 1px solid #e5e5e5; padding: 24px 0; text-align: center; }
+    footer p { font-size: 13px; color: #9ca3af; margin: 0; }
 
     @media (max-width: 480px) {
       main { padding: 32px 0 60px; }
       h1 { font-size: 24px; }
-      .policy-links { flex-direction: column; gap: 10px; }
-      .info-row { flex-direction: column; gap: 4px; }
-      .info-value { text-align: left; }
     }
   </style>
 </head>
@@ -252,57 +68,17 @@
   <main>
     <div class="container">
 
-      <h1>Kook SMS Program</h1>
-      <p class="subtitle">Learn about our text messaging program, how to opt in, and your rights as a subscriber.</p>
+      <h1>Kook SMS Terms of Service</h1>
+      <p class="subtitle">Terms governing Kook's post-purchase text messaging program.</p>
+      <p class="updated">Last updated: June 16, 2026</p>
 
-      <!-- What Is This -->
       <section>
-        <h2>What is the Kook SMS Program?</h2>
+        <h2>Program Description</h2>
         <p>
-          When you purchase a Kook product on Amazon, your order includes a product insert card with a QR code.
-          Scanning the QR code lets you text us directly so we can follow up on your experience, offer support,
-          and share exclusive offers. Participation is entirely voluntary.
+          Kook (operated by Somerset Street Inc) offers a post-purchase SMS engagement program for
+          customers who buy Kook products on Amazon. Messages may include order follow-ups, product
+          satisfaction check-ins, review requests, discount codes, and customer support for product issues.
         </p>
-      </section>
-
-      <!-- How It Works -->
-      <section>
-        <h2>How It Works</h2>
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-text">
-              Find the insert card in your Kook product packaging. It includes a QR code and the message
-              <em>"Text us to share your experience and get a special thank you."</em>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-text">
-              Scan the QR code with your phone's camera. It opens your messaging app with our number
-              and a pre-filled keyword (e.g., <code>Jar</code>).
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-text">
-              Press <strong>Send</strong> to start the conversation. No messages are sent to you until you text us first.
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <div class="step-text">
-              You'll receive a confirmation message and can opt out at any time by replying <code>STOP</code>.
-            </div>
-          </div>
-        </div>
-        <!-- Optional: Add a photo of the physical insert card here for stronger CTA verification -->
-        <!-- <img src="insert-card.jpg" alt="Kook product insert card with QR code" style="width:100%; border-radius:10px; margin-top:20px;"> -->
-      </section>
-
-      <!-- What Messages You'll Receive -->
-      <section>
-        <h2>What Messages You'll Receive</h2>
         <div class="msg-types">
           <span class="msg-tag">Order follow-up</span>
           <span class="msg-tag">Product satisfaction check-in</span>
@@ -312,57 +88,57 @@
         </div>
       </section>
 
-      <!-- Program Details -->
       <section>
-        <h2>Program Details</h2>
-        <div class="info-card">
-          <div class="info-row">
-            <span class="info-label">Program</span>
-            <span class="info-value">Kook SMS Alerts</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Operated by</span>
-            <span class="info-value">Somerset Street Inc</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Phone number</span>
-            <span class="info-value"><code>(774) 474-5202</code></span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Opt-in keywords</span>
-            <span class="info-value"><code>Jar</code> <code>Stack</code> <code>Cereal</code> <code>Pasta50</code> <code>Pasta</code></span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Opt-out</span>
-            <span class="info-value">Reply <code>STOP</code></span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Help</span>
-            <span class="info-value">Reply <code>HELP</code></span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Message frequency</span>
-            <span class="info-value">Varies (typically 2–5 msgs per interaction)</span>
-          </div>
-          <div class="info-row">
-            <span class="info-label">Recurring?</span>
-            <span class="info-value">No — one-time per purchase</span>
-          </div>
-        </div>
+        <h2>How You Opt In</h2>
+        <p>
+          You opt in by scanning a QR code on a product insert card and texting the keyword
+          <code>KOOK</code> to our number. By sending this message, you consent to receive text
+          messages from Kook. A full walkthrough of the opt-in flow is available at
+          <a href="/optin">our Opt-In Disclosure page</a>.
+        </p>
       </section>
 
-      <!-- Disclosures -->
       <section>
-        <h2>Disclosures</h2>
-        <div class="disclosure">
-          Message and data rates may apply. Message frequency varies. You can opt out at any time by replying
-          <strong>STOP</strong> to any message. Reply <strong>HELP</strong> for assistance. Consent to receive
-          text messages is not a condition of purchase. By opting in, you agree to receive text messages from
-          Kook (operated by Somerset Street Inc) at the phone number you use to text us.
-        </div>
-        <div class="policy-links">
-          <a href="https://shopkook.com/policies/privacy-policy" target="_blank" rel="noopener">Privacy Policy ↗</a>
-          <a href="https://shopkook.com/policies/terms-of-service" target="_blank" rel="noopener">Terms of Service ↗</a>
+        <h2>Message Frequency</h2>
+        <p>Message frequency varies. Typically 3–5 messages per conversation.</p>
+      </section>
+
+      <section>
+        <h2>Message &amp; Data Rates</h2>
+        <p>Message and data rates may apply.</p>
+      </section>
+
+      <section>
+        <h2>Opt-Out</h2>
+        <p>
+          You can opt out at any time by replying <code>STOP</code> to any message. You will receive
+          a confirmation and no further messages.
+        </p>
+      </section>
+
+      <section>
+        <h2>Help</h2>
+        <p>
+          For help, reply <code>HELP</code> to any message or email
+          <a href="mailto:support@shopkook.com">support@shopkook.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Privacy</h2>
+        <p>
+          View our Privacy Policy at
+          <a href="https://shopkook.com/policies/privacy-policy" target="_blank" rel="noopener">https://shopkook.com/policies/privacy-policy</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <div class="contact-card">
+          <p><strong>Somerset Street Inc</strong></p>
+          <p>241 Kingston Avenue</p>
+          <p>Brooklyn, NY 11213</p>
+          <p><a href="mailto:support@shopkook.com">support@shopkook.com</a></p>
         </div>
       </section>
 

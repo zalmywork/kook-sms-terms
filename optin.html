@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kook SMS Program — Opt-In Disclosure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: #1a1a1a;
+      background: #fafafa;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    header { background: #fff; border-bottom: 1px solid #e5e5e5; padding: 20px 0; }
+    header .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; color: #1a1a1a; }
+    .logo span { color: #2563eb; }
+    .badge { font-size: 12px; font-weight: 500; color: #6b7280; background: #f3f4f6; padding: 4px 10px; border-radius: 100px; }
+
+    main { padding: 48px 0 80px; }
+
+    h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 12px; color: #111; }
+    .subtitle { font-size: 16px; color: #6b7280; margin-bottom: 40px; }
+
+    section { margin-bottom: 36px; }
+    h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: #111; }
+    p { font-size: 15px; color: #374151; margin-bottom: 12px; }
+
+    /* Insert card mockup */
+    .card-stage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f3f4f6;
+      border: 1px solid #e5e5e5;
+      border-radius: 14px;
+      padding: 40px 24px 28px;
+      margin-top: 8px;
+    }
+    .insert-card {
+      width: 100%;
+      max-width: 380px;        /* ~3.5in x 2in proportions */
+      aspect-ratio: 3.5 / 2;
+      background: #ffffff;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.08);
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .insert-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 6px;
+      background: #2563eb;
+    }
+    .card-left { flex: 1; }
+    .card-brand { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; color: #1a1a1a; margin-bottom: 10px; }
+    .card-brand span { color: #2563eb; }
+    .card-msg { font-size: 13.5px; color: #374151; line-height: 1.5; font-weight: 500; }
+    .card-right { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+    .qr {
+      width: 92px; height: 92px;
+      border-radius: 8px;
+      /* placeholder QR pattern */
+      background:
+        linear-gradient(#1a1a1a 0 0) 0 0 / 28px 28px no-repeat,
+        linear-gradient(#1a1a1a 0 0) 100% 0 / 28px 28px no-repeat,
+        linear-gradient(#1a1a1a 0 0) 0 100% / 28px 28px no-repeat,
+        repeating-linear-gradient(0deg,#1a1a1a 0 6px,transparent 6px 12px) 50% 50% / 44px 44px no-repeat,
+        repeating-linear-gradient(90deg,#1a1a1a 0 6px,transparent 6px 12px) 50% 50% / 44px 44px no-repeat,
+        #ffffff;
+      border: 2px solid #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .qr span {
+      font-size: 11px; font-weight: 700; letter-spacing: 1px; color: #1a1a1a;
+      background: #fff; padding: 2px 6px; border-radius: 4px;
+    }
+    .qr-caption { font-size: 11px; font-weight: 600; color: #6b7280; text-align: center; }
+    .mockup-caption { font-size: 13px; color: #6b7280; margin-top: 18px; font-style: italic; }
+
+    /* Steps */
+    .steps { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+    .step { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; }
+    .step-num { flex-shrink: 0; width: 28px; height: 28px; background: #2563eb; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; }
+    .step-text { font-size: 15px; color: #374151; line-height: 1.6; }
+
+    /* Confirmation message bubble */
+    .bubble {
+      background: #eef2ff;
+      border: 1px solid #c7d2fe;
+      border-radius: 12px;
+      padding: 14px 18px;
+      font-size: 14px;
+      color: #1e3a8a;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* Disclosure list */
+    .disclosure-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 8px 24px; margin-top: 8px; }
+    .disclosure-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid #f3f4f6; }
+    .disclosure-row:last-child { border-bottom: none; }
+    .disclosure-label { flex-shrink: 0; width: 140px; font-size: 14px; font-weight: 600; color: #111; }
+    .disclosure-val { font-size: 14px; color: #374151; }
+    .disclosure-val code { background: #f3f4f6; padding: 2px 8px; border-radius: 4px; font-family: 'SF Mono','Menlo',monospace; font-size: 13px; }
+
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    footer { border-top: 1px solid #e5e5e5; padding: 24px 0; text-align: center; }
+    footer p { font-size: 13px; color: #9ca3af; margin: 0; }
+
+    @media (max-width: 480px) {
+      main { padding: 32px 0 60px; }
+      h1 { font-size: 24px; }
+      .insert-card { flex-direction: column; text-align: center; gap: 16px; }
+      .disclosure-row { flex-direction: column; gap: 4px; }
+      .disclosure-label { width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">Koo<span>K</span></div>
+      <div class="badge">SMS Program</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <h1>Kook SMS Program — Opt-In Disclosure</h1>
+      <p class="subtitle">How customers consent to receive text messages from Kook</p>
+
+      <!-- Insert card mockup -->
+      <section>
+        <h2>The Product Insert Card</h2>
+        <p>
+          Every Kook product shipped through Amazon includes a physical insert card printed with
+          a QR code. The card is the only way a customer joins the SMS program — there is no web
+          form, no checkbox at checkout, and no pre-checked consent. The customer must physically
+          scan the card and send a message first.
+        </p>
+        <div class="card-stage">
+          <div class="insert-card" role="img" aria-label="Kook product insert card mockup with QR code">
+            <div class="card-left">
+              <div class="card-brand">Koo<span>K</span></div>
+              <div class="card-msg">Love your new Kook product?<br>Text us to share your experience and get a special thank you!</div>
+            </div>
+            <div class="card-right">
+              <div class="qr"><span>QR</span></div>
+              <div class="qr-caption">Scan with your<br>phone's camera</div>
+            </div>
+          </div>
+          <p class="mockup-caption">Product insert card included in Amazon orders (illustration)</p>
+        </div>
+      </section>
+
+      <!-- Opt-in flow -->
+      <section>
+        <h2>The Opt-In Flow, Step by Step</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-text">A physical product insert card is included in every Kook product order shipped via Amazon.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-text">The customer <strong>voluntarily scans the QR code</strong> printed on the card.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-text">Scanning opens the customer's native SMS / messaging app with Kook's phone number and the pre-filled keyword <code style="background:#f3f4f6;padding:2px 8px;border-radius:4px;font-family:'SF Mono','Menlo',monospace;font-size:13px;">KOOK</code>.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-text">The customer must <strong>manually press Send</strong> to initiate the conversation. No messages are sent by Kook until the customer texts first.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-text">
+              After the customer sends the keyword, they receive an opt-in confirmation:
+              <div class="bubble">Kook: Thanks for reaching out! We'll follow up about your recent purchase. Msg &amp; data rates may apply. Reply HELP for help, STOP to opt out.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Disclosures -->
+      <section>
+        <h2>Disclosures</h2>
+        <div class="disclosure-card">
+          <div class="disclosure-row">
+            <div class="disclosure-label">Message frequency</div>
+            <div class="disclosure-val">Message frequency varies based on customer interaction. Typically 3–5 messages per conversation.</div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">Opt-out</div>
+            <div class="disclosure-val">Customers can opt out at any time by replying <code>STOP</code> to any message.</div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">Help</div>
+            <div class="disclosure-val">Customers can reply <code>HELP</code> for support information.</div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">Rates</div>
+            <div class="disclosure-val">Message and data rates may apply.</div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">Privacy</div>
+            <div class="disclosure-val"><a href="https://shopkook.com/policies/privacy-policy" target="_blank" rel="noopener">View our Privacy Policy ↗</a></div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">SMS Terms</div>
+            <div class="disclosure-val"><a href="https://kook-sms-terms.vercel.app/" target="_blank" rel="noopener">View our SMS Terms of Service ↗</a></div>
+          </div>
+          <div class="disclosure-row">
+            <div class="disclosure-label">Business</div>
+            <div class="disclosure-val">Kook is operated by Somerset Street Inc, 241 Kingston Avenue, Brooklyn, NY 11213.</div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Somerset Street Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
