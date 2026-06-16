@@ -61,8 +61,7 @@ The page **must** contain all of the following for A2P 10DLC CTA compliance:
 > messages are sent until the customer texts first. Customers can opt out at any time by replying STOP.
 
 ### 2. Opt-in keywords (currently blank — must fill):
-> KOOK
-> (Add any additional product-specific keywords if the QR codes use different pre-fills per product)
+> Jar, Stack, Cereal, Pasta50, Pasta
 
 ### 3. Opt-in message (currently blank — must fill):
 > Thanks for reaching out to Kook! You've opted in to receive order follow-up, product tips, and
