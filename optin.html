@@ -46,6 +46,14 @@
       padding: 40px 24px 28px;
       margin-top: 8px;
     }
+    .insert-card-img {
+      width: 100%;
+      max-width: 420px;        /* ~3.5in x 2in proportions */
+      height: auto;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.14), 0 2px 6px rgba(0,0,0,0.08);
+      display: block;
+    }
     .insert-card {
       width: 100%;
       max-width: 380px;        /* ~3.5in x 2in proportions */
@@ -159,17 +167,8 @@
           scan the card and send a message first.
         </p>
         <div class="card-stage">
-          <div class="insert-card" role="img" aria-label="Kook product insert card mockup with QR code">
-            <div class="card-left">
-              <div class="card-brand">Koo<span>K</span></div>
-              <div class="card-msg">Love your new Kook product?<br>Text us to share your experience and get a special thank you!</div>
-            </div>
-            <div class="card-right">
-              <div class="qr"><span>QR</span></div>
-              <div class="qr-caption">Scan with your<br>phone's camera</div>
-            </div>
-          </div>
-          <p class="mockup-caption">Product insert card included in Amazon orders (illustration)</p>
+          <img class="insert-card-img" src="/insert-card.png" alt="Kook product insert card with QR code: 'Love your new Kook product? Text us to share your experience and get a special thank you!' Scan with your phone's camera.">
+          <p class="mockup-caption">Product insert card included in Amazon orders</p>
         </div>
       </section>
 
